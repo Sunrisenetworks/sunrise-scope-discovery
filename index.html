@@ -18,6 +18,8 @@
             --border-color: #e5e7eb;
             --accent-red: #ef4444;
             --accent-red-bg: #fef2f2;
+            --accent-green: #10b981;
+            --accent-green-bg: #ecfdf5;
         }
 
         *, *::before, *::after {
@@ -115,6 +117,20 @@
             transform: translateY(0);
         }
 
+        .btn-secondary {
+            background-color: #4b5563;
+            box-shadow: 0 4px 6px -1px rgba(75, 85, 99, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #374151;
+        }
+
+        .btn.active-toggle {
+            background-color: #047857;
+            box-shadow: 0 4px 6px -1px rgba(4, 120, 87, 0.2);
+        }
+
         /* Guidance Banner */
         .instruction-card {
             background-color: var(--primary-light);
@@ -148,6 +164,15 @@
             letter-spacing: 0.5px;
             margin: 28px 0 14px 0;
             padding-left: 4px;
+        }
+
+        .deep-dive-section {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Row & Column System */
@@ -337,6 +362,18 @@
             margin-bottom: 4px;
         }
 
+        .badge-infra {
+            color: #047857;
+            font-weight: bold;
+            background-color: var(--accent-green-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            border: 1px solid #a7f3d0;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
         .textarea-notes {
             width: 100%;
             height: 100%;
@@ -373,8 +410,11 @@
                 max-width: 100%;
                 padding-bottom: 0;
             }
-            .app-header, .instruction-card, .actions-panel {
-                display: none !important; /* Hides headers & buttons on paper/PDF */
+            .app-header, .instruction-card, .actions-panel, .branch-selector-panel {
+                display: none !important; /* Hides headers & toggle buttons on paper/PDF */
+            }
+            .deep-dive-section {
+                display: block !important; /* Force print visible sections if they're active */
             }
             section h2 {
                 page-break-after: avoid;
@@ -766,138 +806,160 @@
         </div>
     </section>
 
-    <section>
-        <h2>🛠️ 5. Solution-Specific Technical Scoping</h2>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>24/7 Managed SOC</label>
-                <span>Scope log aggregation parameters and continuous telemetry boundaries.</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="input-group-label">Target Log Sources (Select all)</label>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Active Directory / Entra ID</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Firewalls & Web Gateways</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Cloud Infrastructure (AWS/Azure)</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">End-user Productivity (O365/Google Workspace)</span></label>
-                </div>
-                <div style="margin-top: 10px;">
-                    <label class="input-group-label">Estimated Monthly Retention Requirement</label>
-                    <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                        <label class="option-item"><input type="radio" name="soc_retention"><span class="option-text">90 Days</span></label>
-                        <label class="option-item"><input type="radio" name="soc_retention"><span class="option-text">180 Days</span></label>
-                        <label class="option-item"><input type="radio" name="soc_retention"><span class="option-text">1 Year (Compliance standard)</span></label>
-                    </div>
-                </div>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Note down estimated daily log volume (GB/day) or specific EPS metrics..."></textarea>
-            </div>
+    <div class="branch-selector-panel" style="margin: 36px 0; background: #e2e8f0; padding: 16px; border-radius: 12px; border: 1px solid #cbd5e1;">
+        <p style="margin: 0 0 12px 0; font-size: 14px; font-weight: 700; color: #334155; text-align: center; text-transform: uppercase; letter-spacing: 0.5px;">
+            🎯 Core Architectural Tracks Discovery
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 12px; max-width: 600px; margin: 0 auto;">
+            <button type="button" class="btn btn-secondary" id="toggle-cybersec" onclick="toggleDeepDive('cybersec-dive', this, '🔒')">
+                🔒 Expand Cybersecurity Scoping
+            </button>
+            <button type="button" class="btn btn-secondary" id="toggle-network" onclick="toggleDeepDive('network-infra-dive', this, '🌐')">
+                🌐 Expand Network Infrastructure Scoping
+            </button>
         </div>
+    </div>
 
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>VAPT Scans & Penetration Testing</label>
-                <span>Determine target system vectors and structural assessment boundaries.</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="input-group-label">Scope Parameters</label>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-                    <label class="option-item"><input type="checkbox"><span class="option-text">External Public IPs</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Internal Core Subnets</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Web Applications (URL Count)</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Mobile Apps (iOS/Android)</span></label>
+    <div id="cybersec-dive" class="deep-dive-section" style="display: none;">
+        <section>
+            <h2>🔒 Deep-Dive: Cybersecurity Controls Scoping</h2>
+            
+            <div class="discovery-card">
+                <div class="meta-zone">
+                    <label>Identity & Perimeter Security</label>
+                    <span>Assess structural access tracking mechanisms and centralized authorization matrices.</span>
                 </div>
-                <div style="margin-top: 10px;">
-                    <label class="input-group-label">Testing Method Choice</label>
-                    <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                        <label class="option-item"><input type="radio" name="vapt_type"><span class="option-text">Black Box</span></label>
-                        <label class="option-item"><input type="radio" name="vapt_type"><span class="option-text">Grey Box</span></label>
-                        <label class="option-item"><input type="radio" name="vapt_type"><span class="option-text">White Box</span></label>
-                    </div>
+                <div class="interactive-zone">
+                    <label class="input-group-label">Current Authentication Capabilities</label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Single Sign-On (SSO) active across all core enterprise apps</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Privileged Access Management (PAM) deployed for infrastructure roots</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Strict Conditional Access Profiles enforced (Geo-fencing, Device health)</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Central Identity Synchronized (Entra ID, Okta, Active Directory)</span></label>
+                </div>
+                <div class="notes-zone">
+                    <textarea class="textarea-notes" placeholder="Log specific identity directory structures, legacy non-SSO applications, or access exceptions..."></textarea>
                 </div>
             </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="List precise live target counts, code base parameters, or API endpoints..."></textarea>
-            </div>
-        </div>
 
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>GRC Services & Consultancy</label>
-                <span>Isolate explicit corporate alignment models and Virtual CISO engagement.</span>
+            <div class="discovery-card">
+                <div class="meta-zone">
+                    <label>Data Protection & Exfiltration</label>
+                    <span>Analyze defense-in-depth layout for sensitive structural storage repositories.</span>
+                </div>
+                <div class="interactive-zone">
+                    <label class="input-group-label">Threat Remediation Mechanisms</label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Data Loss Prevention (DLP) agent active on endpoints</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Secure Email Gateway (SEG) with DMARC/DKIM isolation active</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Cloud Access Security Broker (CASB) filtering cloud interactions</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Full disk encryption uniformly deployed across endpoints</span></label>
+                </div>
+                <div class="notes-zone">
+                    <textarea class="textarea-notes" placeholder="Track third-party document protection suites or structured classification parameters..."></textarea>
+                </div>
             </div>
-            <div class="interactive-zone">
-                <label class="input-group-label">Core Consultancy Requirements</label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Gap Analysis & Strategic Roadmap Engineering</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Information Security Policy Suite Development</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Virtual CISO Support Framework (Fractional Retainer)</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Third-Party Cyber Risk Management Matrix</span></label>
+            
+            <div class="discovery-card">
+                <div class="meta-zone">
+                    <label>Vulnerability Lifecycle Management</label>
+                    <span>Map structural visibility workflows into internal computing environments.</span>
+                </div>
+                <div class="interactive-zone">
+                    <label class="input-group-label">Assessment Maturity</label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Continuous internal vulnerability scanning engine deployed</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Strict automated orchestration framework handles regular patch cycles</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Comprehensive up-to-date hardware & software asset inventory verified</span></label>
+                </div>
+                <div class="notes-zone">
+                    <textarea class="textarea-notes" placeholder="Identify current vulnerability scanning engines (e.g., Tenable, Qualys, Rapid7) in play..."></textarea>
+                </div>
             </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Map target certifications desired or current organizational policy gaps..."></textarea>
-            </div>
-        </div>
+        </section>
+    </div>
 
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Managed Next-Gen Firewalls</label>
-                <span>Calibrate perimeter parameters, structural rulesets, and throughput needs.</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="input-group-label">Deployment Architecture</label>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Physical Appliances</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Virtual / Cloud Firewalls</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">High-Availability (HA) Pair</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">SD-WAN Edge Integration</span></label>
+    <div id="network-infra-dive" class="deep-dive-section" style="display: none;">
+        <section>
+            <h2>🌐 Deep-Dive: Network Infrastructure Scoping</h2>
+            
+            <div class="discovery-card">
+                <div class="meta-zone">
+                    <label>Edge Connectivity & WAN Topology</label>
+                    <span>Map data transit pathways between site footprints and central boundaries.</span>
                 </div>
-                <div style="margin-top: 10px;">
-                    <label class="input-group-label">Required Feature Subscriptions</label>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-                        <label class="option-item"><input type="checkbox"><span class="option-text">IPS & Malicious Threat Prevention</span></label>
-                        <label class="option-item"><input type="checkbox"><span class="option-text">Advanced URL Filtering</span></label>
-                    </div>
+                <div class="interactive-zone">
+                    <label class="input-group-label">Edge Operations Matrix</label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Multi-ISP Failover configured with active BGP routing optimization</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Active SD-WAN mesh architecture operating across branch offices</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Dedicated MPLS Circuits cross-connecting branch systems</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Direct Cloud Interconnect pipes active (ExpressRoute, Direct Connect)</span></label>
+                </div>
+                <div class="notes-zone">
+                    <textarea class="textarea-notes" placeholder="Detail ISP providers, corporate contract renewal dates, or bandwidth constraints per site..."></textarea>
                 </div>
             </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Capture required network throughput speed (e.g., 1Gbps, 10Gbps) and device counts..."></textarea>
-            </div>
-        </div>
 
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Network Infrastructure Solutions</label>
-                <span>Calibrate hardware density and baseline physical network connectivity limits.</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="input-group-label">Infrastructure Pillars In-Scope</label>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Core / Access Layer Switching</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Enterprise Wireless (Wi-Fi Access Points)</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Structured Cabling & Fiber Uplinks</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">UPS & Server Room Enclosures</span></label>
+            <div class="discovery-card">
+                <div class="meta-zone">
+                    <label>Core Switching & Access Distribution</label>
+                    <span>Evaluate the hardware foundation of the on-premises switching layer.</span>
                 </div>
-                <div style="margin-top: 10px;">
-                    <label class="input-group-label">Network Environment State</label>
-                    <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                        <label class="option-item"><input type="radio" name="net_state"><span class="option-text">Greenfield (Brand New Build)</span></label>
-                        <label class="option-item"><input type="radio" name="net_state"><span class="option-text">Brownfield (Tech Refresh / Expansion)</span></label>
-                    </div>
+                <div class="interactive-zone">
+                    <label class="input-group-label">Switching Layer Features</label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Layer 3 Core routing architecture configured internally</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Granular VLAN segmentation deployed (Data, Voice, IoT, Guest)</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Power over Ethernet (PoE/PoE+) provisioning required across access blocks</span></label>
+                    <label class="option-item">
+                        <input type="checkbox">
+                        <span class="option-text"><span class="badge-infra">Lifecycle Risk</span> Legacy switching hardware running past End-of-Life (EOL)</span>
+                    </label>
+                </div>
+                <div class="notes-zone">
+                    <textarea class="textarea-notes" placeholder="Map core switching fabric specifications, ports counts, and stacked configuration properties..."></textarea>
                 </div>
             </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Note down network node counts, architectural preferences, or physical floor counts..."></textarea>
+
+            <div class="discovery-card">
+                <div class="meta-zone">
+                    <label>Wireless Access Density</label>
+                    <span>Determine wireless coverage scale and internal segment isolation layers.</span>
+                </div>
+                <div class="interactive-zone">
+                    <label class="input-group-label">Wireless Access Matrix</label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">High-Density Wi-Fi 6 / 6E / 7 access arrays uniformly provisioned</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Centralized controller-managed access structure (Cloud or Local appliance)</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Isolated Guest Portal engine active with independent SMS/Email verification</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Rogue Access Point detection mechanisms running continuously</span></label>
+                </div>
+                <div class="notes-zone">
+                    <textarea class="textarea-notes" placeholder="Log physical space layout, estimated maximum concurrent wireless users, or current AP brand preferences..."></textarea>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <footer class="footer-branding">
         Sunrise Networks LLC © 2026 — Secure Confidential Internal Discovery Tool
     </footer>
 
 </div>
+
+<script>
+    function toggleDeepDive(sectionId, buttonElement, icon) {
+        const targetSection = document.getElementById(sectionId);
+        const actionText = buttonElement.innerHTML.trim();
+        
+        if (targetSection.style.display === 'none' || targetSection.style.display === '') {
+            targetSection.style.display = 'block';
+            buttonElement.classList.add('active-toggle');
+            buttonElement.classList.remove('btn-secondary');
+            buttonElement.innerHTML = actionText.replace('Expand', 'Collapse');
+        } else {
+            targetSection.style.display = 'none';
+            buttonElement.classList.remove('active-toggle');
+            buttonElement.classList.add('btn-secondary');
+            buttonElement.innerHTML = actionText.replace('Collapse', 'Expand');
+        }
+    }
+</script>
 
 </body>
 </html>
