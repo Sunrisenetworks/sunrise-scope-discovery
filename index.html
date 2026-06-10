@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunrise Networks LLC - Discovery Form</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #eff6ff;
+            --primary-border: #bfdbfe;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --text-placeholder: #9ca3af;
+            --bg-body: #f3f4f6;
+            --bg-card: #ffffff;
+            --bg-notes: #f9fafb;
+            --border-color: #e5e7eb;
+            --accent-red: #ef4444;
+            --accent-red-bg: #fef2f2;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            line-height: 1.5;
+            margin: 0;
+            padding: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-bottom: 60px;
+        }
+
+        /* App Bar Header */
+        .app-header {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+        }
+
+        @media(min-width: 640px) {
+            .app-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .brand-info h1 {
+            color: var(--primary);
+            font-size: 22px;
+            margin: 0 0 4px 0;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-info p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Action Buttons */
+        .actions-panel {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.2);
+            width: 100%;
+            justify-content: center;
+        }
+
+        @media(min-width: 640px) {
+            .btn {
+                width: auto;
+            }
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        /* Guidance Banner */
+        .instruction-card {
+            background-color: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+
+        .instruction-card h3 {
+            margin: 0 0 6px 0;
+            color: #1d4ed8;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .instruction-card ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 13.5px;
+            color: #1e40af;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        section h2 {
+            font-size: 16px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 28px 0 14px 0;
+            padding-left: 4px;
+        }
+
+        /* Row & Column System */
+        .discovery-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        @media(min-width: 800px) {
+            .discovery-card {
+                flex-direction: row;
+                gap: 20px;
+            }
+        }
+
+        .meta-zone {
+            flex: 1;
+        }
+
+        @media(min-width: 800px) {
+            .meta-zone {
+                max-width: 250px;
+                min-width: 220px;
+            }
+        }
+
+        .meta-zone label {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--text-main);
+            display: block;
+        }
+
+        .meta-zone span {
+            font-size: 13px;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+
+        .interactive-zone {
+            flex: 1.5;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .notes-zone {
+            flex: 1.2;
+            background-color: var(--bg-notes);
+            border: 1px dashed #d1d5db;
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        /* Native-feeling Interactive Inputs */
+        .text-input-field {
+            width: 100%;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--text-main);
+            background-color: #fff;
+            outline: none;
+            transition: border-color 0.15s ease;
+        }
+
+        .text-input-field:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+
+        .input-group-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        /* Modern Custom Checkboxes */
+        .option-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.15s ease;
+        }
+
+        .option-item:hover {
+            background-color: #f9fafb;
+        }
+
+        .option-item input[type="checkbox"],
+        .option-item input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            outline: none;
+            margin-top: 2px;
+            flex-shrink: 0;
+            background-color: #fff;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.15s ease;
+        }
+
+        .option-item input[type="radio"] {
+            border-radius: 50%;
+        }
+
+        .option-item input:checked {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .option-item input:checked::after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 2px;
+            width: 4px;
+            height: 8px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .option-item input[type="radio"]:checked::after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            width: 6px;
+            height: 6px;
+            background-color: white;
+            border: none;
+            border-radius: 50%;
+            transform: none;
+        }
+
+        .option-text {
+            font-size: 14px;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .badge-ot {
+            color: var(--accent-red);
+            font-weight: bold;
+            background-color: var(--accent-red-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            border: 1px solid #fecaca;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
+        .badge-gov {
+            color: #0369a1;
+            font-weight: bold;
+            background-color: #f0f9ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            border: 1px solid #bae6fd;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
+        .textarea-notes {
+            width: 100%;
+            height: 100%;
+            min-height: 80px;
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: 13.5px;
+            resize: vertical;
+            color: var(--text-main);
+            outline: none;
+        }
+
+        .textarea-notes::placeholder {
+            color: var(--text-placeholder);
+            font-style: italic;
+        }
+
+        .footer-branding {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-placeholder);
+            margin-top: 40px;
+        }
+
+        /* 🖨️ STRICT EXCLUSIVE PRINT OPTIMIZATIONS */
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+                font-size: 10pt;
+            }
+            .container {
+                max-width: 100%;
+                padding-bottom: 0;
+            }
+            .app-header, .instruction-card, .actions-panel {
+                display: none !important; /* Hides headers & buttons on paper/PDF */
+            }
+            section h2 {
+                page-break-after: avoid;
+                margin-top: 20px;
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 4px;
+            }
+            .discovery-card {
+                flex-direction: row !important;
+                gap: 15px;
+                page-break-inside: avoid;
+                box-shadow: none !important;
+                border-radius: 0;
+                border: none;
+                border-bottom: 1px solid #e5e7eb;
+                padding: 10px 0;
+                margin-bottom: 0;
+            }
+            .meta-zone {
+                max-width: 25% !important;
+                min-width: 25% !important;
+            }
+            .interactive-zone {
+                max-width: 45% !important;
+                min-width: 45% !important;
+            }
+            .notes-zone {
+                max-width: 30% !important;
+                min-width: 30% !important;
+                background-color: #fff !important;
+                border: none;
+                border-left: 1px dashed #999;
+                border-radius: 0;
+                padding: 4px 0 4px 10px;
+            }
+            .text-input-field {
+                border: none;
+                border-bottom: 1px solid #777;
+                border-radius: 0;
+                padding: 4px 0;
+                background: transparent;
+            }
+            .option-item input {
+                border: 1px solid #444 !important;
+            }
+            .textarea-notes::placeholder {
+                color: #ccc !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header class="app-header">
+        <div class="brand-info">
+            <h1>Sunrise Networks LLC</h1>
+            <p>Cybersecurity & Infrastructure Scoping Tool</p>
+        </div>
+        <div class="actions-panel">
+            <button class="btn" onclick="window.print()">
+                <span>🖨️</span> Save as PDF / Print Form
+            </button>
+        </div>
+    </header>
+
+    <div class="instruction-card">
+        <h3>💡 Mobile & Desktop Tips</h3>
+        <ul>
+            <li>Tap or click options seamlessly to pre-fill the criteria fields dynamically.</li>
+            <li>Tap into the <strong>Notes / Context</strong> area on the right to type details directly on your phone.</li>
+            <li>When done, tap the <strong>Save as PDF</strong> button above to store a clean copy directly on your phone.</li>
+        </ul>
+    </div>
+
+    <section>
+        <h2>📋 1. Client Profile & Procurement Route</h2>
+        
+        <div class="discovery-card">
+            <div class="meta-zone">
+                <label>Company Identity</label>
+                <span>Log the organization name, target stakeholder details, and operating profile tier.</span>
+            </div>
+            <div class="interactive-zone">
+                <div style="margin-bottom: 10px;">
+                    <label class="input-group-label">Company Name</label>
+                    <input type="text" class="text-input-field" placeholder="Type company name...">
+                </div>
+                <div>
+                    <label class="input-group-label">Primary Stakeholder & Title</label>
+                    <input type="text" class="text-input-field" placeholder="Full name, title, email...">
+                </div>
+                <div style="margin-top: 10px; display: flex; gap: 8px;">
+                    <label class="option-item"><input type="radio" name="segment"><span class="option-text">Gov</span></label>
+                    <label class="option-item"><input type="radio" name="segment"><span class="option-text">Enterprise</span></label>
+                    <label class="option-item"><input type="radio" name="segment"><span class="option-text">SMB</span></label>
+                </div>
+            </div>
+            <div class="notes-zone">
+                <textarea class="textarea-notes" placeholder="Note down nested divisions, subsidiary names or direct contact details..."></textarea>
+            </div>
+        </div>
+
+        <div class="discovery-card">
+            <div class="meta-zone">
+                <label>Infrastructure Scale</label>
+                <span>Determine endpoint and site density to calibrate architectural licensing matrices.</span>
+            </div>
+            <div class="interactive-zone">
+                <label class="input-group-label">User Endpoints (Workstations/Laptops)</label>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+                    <label class="option-item"><input type="radio" name="endpoints"><span class="option-text">&lt; 50</span></label>
+                    <label class="option-item"><input type="radio" name="endpoints"><span class="option-text">50 – 250</span></label>
+                    <label class="option-item"><input type="radio" name="endpoints"><span class="option-text">251 – 500</span></label>
+                    <label class="option-item"><input type="radio" name="endpoints"><span class="option-text">500 – 2k</span></label>
+                    <label class="option-item" style="grid-column: span 2;"><input type="radio" name="endpoints"><span class="option-text">More than 2,000 endpoints</span></label>
+                </div>
+                <label class="input-group-label" style="margin-top: 10px;">Total Physical Branch Offices</label>
+                <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                    <label class="option-item"><input type="radio" name="sites"><span class="option-text">1 Site</span></label>
+                    <label class="option-item"><input type="radio" name="sites"><span class="option-text">2 – 5</span></label>
+                    <label class="option-item"><input type="radio" name="sites"><span class="option-text">6 – 20</span></label>
+                    <label class="option-item"><input type="radio" name="sites"><span class="option-text">20+</span></label>
+                </div>
+            </div>
+            <div class="notes-zone">
+                <textarea class="textarea-notes" placeholder="Log geographical concentration or presence of cloud-only work models..."></textarea>
+            </div>
+        </div>
+
+        <div class="discovery-card">
+            <div class="meta-zone">
+                <label>Buying Process</label>
+                <span>Identify the evaluation path, procurement gates, and pricing model frameworks.</span>
+            </div>
+            <div class="interactive-zone">
+                <label class="option-item"><input type="radio" name="buy_path"><span class="option-text">Direct Award (Pre-approved supplier)</span></label>
+                <label class="option-item"><input type="radio" name="buy_path"><span class="option-text">Limited RFP (Shortlisted evaluations)</span></label>
+                <label class="option-item"><input type="radio" name="buy_path"><span class="option-text">Open Public Tender (Tejouri Portal)</span></label>
+                <label class="option-item"><input type="radio" name="buy_path"><span class="option-text">No formal process / Executive sign-off</span></label>
+            </div>
+            <div class="notes-zone">
+                <textarea class="textarea-notes" placeholder="Track portal alignment keys or expected RFP publication schedules..."></textarea>
+            </div>
+        </div>
+
+        <div class="discovery-card">
+            <div class="meta-zone">
+                <label>Financial Allocation</label>
+                <span>Establish targeted cost thresholds to align appropriate technologies.</span>
+            </div>
+            <div class="interactive-zone">
+                <label class="option-item"><input type="radio" name="budget"><span class="option-text">Under AED 150K / year</span></label>
+                <label class="option-item"><input type="radio" name="budget"><span class="option-text">AED 150K – 500K / year</span></label>
+                <label class="option-item"><input type="radio" name="budget"><span class="option-text">AED 500K – 2M / year</span></label>
+                <label class="option-item"><input type="radio" name="budget"><span class="option-text">Over AED 2M / year</span></label>
+                <label class="option-item"><input type="radio" name="budget"><span class="option-text">Monthly subscription structure (SMB model)</span></label>
+            </div>
+            <div class="notes-zone">
+                <textarea class="textarea-notes" placeholder="Note down constraints, Capex vs. Opex biases, or fiscal year boundaries..."></textarea>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🖥️ 2. Current IT & Security Architecture</h2>
+
+        <div class="discovery-card">
+            <div class="meta-zone">
+                <label>IT Management Model</label>
+                <span>Understand who handles daily administration to map operational dependencies.</span>
+            </div>
+            <div class="interactive-zone">
+                <label class="option-item"><input type="radio" name="it_model"><span class="option-text">Fully In-House Technology Team</span></label>
+                <label class="option-item"><input type="radio" name="it_model"><span class="option-text">Outsourced to Managed Service Provider (MSP)</span></label>
+                <label class="option-item"><input type="radio" name="it_model"><span class="option-text">Co-Managed / Hybrid (In-house + MSP support)</span></label>
+                <label class="option-item"><input type="radio" name="it_model"><span class="option-text">Ad-hoc support dependency / Unmanaged</span></label>
+            </div>
+            <div class="notes-zone">
+                <textarea class="textarea-notes" placeholder="Log internal engineering constraints or current vendor names..."></textarea>
+            </div>
+        </div>
+
+        <div class="discovery-card">
+            <div class="meta-zone">
+                <label>Data Hosting Footprint</label>
+                <span>Locate primary computing workloads to evaluate perimeter boundary protection.</span>
+            </div>
+            <div class="interactive-zone">
+                <label class="option-item"><input type="checkbox"><span class="option-text">On-Premises Core Data Centre</span></label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">National Local Cloud (G42, Khazna, etc.)</span></label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">Global Public Cloud (Azure, AWS, GCP)</span></label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">Hybrid Configuration Mix</span></label>
+                <label class="option-item">
+                    <input type="checkbox">
+                    <span class="option-text"><span class="badge-ot">OT Exposure</span> Includes active SCADA / ICS environments</span>
+                </label>
+            </div>
+            <div class="notes-zone">
+                <textarea class="textarea-notes" placeholder="Document critical business app structures (e.g., SAP, O365, local web farms)..."></textarea>
+            </div>
+        </div>
+
+        <div class="discovery-card">
+            <div class="meta-zone">
+                <label>Active Controls Stack</label>
+                <span>Identify current defenses to map security integration opportunities.</span>
+            </div>
+            <div class="interactive-zone">
+                <label class="input-group-label">Running Controls (Select all that apply)</label>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Next-Gen Firewall</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Antivirus / EDR</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Identity MFA</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">SIEM Central Logs</span></label>
+                    <label class="option-item" style="grid-column: span 2;"><input type="checkbox"><span class="option-text">Automated Off-site Backups</span></label>
+                </div>
+                <label class="input-group-label" style="margin-top: 10px;">Monitoring & Verification Visibility</label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">Active 24/7 Monitoring SOC Capability</span></label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">Routine Penetration Testing Conducted Annually</span></label>
+            </div>
+            <div class="notes-zone">
+                <textarea class="textarea-notes" placeholder="Identify software brands (e.g., Palo Alto, Fortinet, CrowdStrike) currently running..."></textarea>
+            </div>
+        </div>
+
+        <div class="discovery-card">
+            <div class="meta-zone">
+                <label>Incident History</label>
+                <span>Review past security challenges to isolate critical defense gaps.</span>
+            </div>
+            <div class="interactive-zone">
+                <label class="option-item"><input type="checkbox"><span class="option-text">Ransomware / Extortion Incident</span></label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">Business Email Compromise (BEC) / Phishing loss</span></label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">Data Leak / Corporate Credential Compromise</span></label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">Clean record / No major recent exploits reported</span></label>
+            </div>
+            <div class="notes-zone">
+                <textarea class="textarea-notes" placeholder="Isolate technical blast impact metrics or remediation outcomes..."></textarea>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>⚖️ 3. Compliance & Resilience Drivers</h2>
+
+        <div class="discovery-card">
+            <div class="meta-zone">
+                <label>Compliance Frameworks</label>
+                <span>Determine compliance obligations to track mandatory engineering criteria.</span>
+            </div>
+            <div class="interactive-zone">
+                <div style="display: grid; grid-template-columns: 1fr; gap: 2px;">
+                    <label class="option-item"><input type="checkbox"><span class="option-text">NESA / IA Standards Alignment</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">UAE Central Bank (CBUAE) Directives</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">UAE Personal Data Protection Law (PDPL)</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">ISO 27001 / NIST CSF Target Alignment</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">ADGM / DFSA Regulatory Modules</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">No strict statutory driver currently active</span></label>
+                </div>
+            </div>
+            <div class="notes-zone">
+                <textarea class="textarea-notes" placeholder="Capture specific upcoming audit milestones or active non-compliance warnings..."></textarea>
+            </div>
+        </div>
+
+        <div class="discovery-card">
+            <div class="meta-zone">
+                <label>Data Sovereignty</label>
+                <span>Verify jurisdictional residency laws governing target corporate records.</span>
+            </div>
+            <div class="interactive-zone">
+                <label class="option-item"><input type="radio" name="sovereign"><span class="option-text">Strict Rule: All data must live inside the UAE</span></label>
+                <label class="option-item"><input type="radio" name="sovereign"><span class="option-text">GCC-regional data storage is acceptable</span></label>
+                <label class="option-item"><input type="radio" name="sovereign"><span class="option-text">No boundaries / Sovereign hosting not restricted</span></label>
+            </div>
+            <div class="notes-zone">
+                <textarea class="textarea-notes" placeholder="Isolate specific components requiring isolated local placement..."></textarea>
+            </div>
+        </div>
+
+        <div class="discovery-card">
+            <div class="meta-zone">
+                <label>Business Continuity Plan</label>
+                <span>Measure disaster readiness and response recovery capabilities.</span>
+            </div>
+            <div class="interactive-zone">
+                <label class="option-item"><input type="checkbox"><span class="option-text">Has documented & tested Incident Response Plan (IRP)</span></label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">Has functional Business Continuity / DR strategies</span></label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">Plans exist but are informal or outdated</span></label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">No documented continuity structures ready</span></label>
+            </div>
+            <div class="notes-zone">
+                <textarea class="textarea-notes" placeholder="Identify strict Recovery Time Objectives (RTO) or critical application priorities..."></textarea>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🚀 4. Proposed Scope & Preferences</h2>
+
+        <div class="discovery-card">
+            <div class="meta-zone">
+                <label>Primary Business Drivers</label>
+                <span>Isolate the core business objective to align the value proposition.</span>
+            </div>
+            <div class="interactive-zone">
+                <label class="option-item"><input type="checkbox"><span class="option-text">Mitigating catastrophic Ransomware / Extortion exposure</span></label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">Remediating audit deficiencies / Pen-test findings</span></label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">Securing sprawling cloud migration / Hybrid workforce</span></label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">Urgent compliance deadline fulfillment</span></label>
+            </div>
+            <div class="notes-zone">
+                <textarea class="textarea-notes" placeholder="What core concern triggered their call to us today?..."></textarea>
+            </div>
+        </div>
+
+        <div class="discovery-card">
+            <div class="meta-zone">
+                <label>Requested Services</label>
+                <span>Map desired solutions to scope the upcoming technical proposal.</span>
+            </div>
+            <div class="interactive-zone">
+                <label class="option-item"><input type="checkbox"><span class="option-text">24/7 Managed SOC (SIEM/XDR)</span></label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">Penetration Testing / VAPT Scans</span></label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">GRC Services & vCISO Consultancy</span></label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">Managed Firewalls & Network Security</span></label>
+                <label class="option-item"><input type="checkbox"><span class="option-text">Incident Response Retainer Facility</span></label>
+            </div>
+            <div class="notes-zone">
+                <textarea class="textarea-notes" placeholder="Note down any specific solution requirements or scoping boundaries..."></textarea>
+            </div>
+        </div>
+
+        <div class="discovery-card">
+            <div class="meta-zone">
+                <label>Vendor Ecosystem Alignment</label>
+                <span>Identify vendor preferences to leverage existing toolsets or skills.</span>
+            </div>
+            <div class="interactive-zone">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Microsoft Ecosystem</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Palo Alto Networks</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">CrowdStrike / S1</span></label>
+                    <label class="option-item"><input type="checkbox"><span class="option-text">Fortinet / Check Point</span></label>
+                    <label class="option-item" style="grid-column: span 2;"><input type="checkbox"><span class="option-text">Vendor-Agnostic (Best performance / price mix)</span></label>
+                </div>
+            </div>
+            <div class="notes-zone">
+                <textarea class="textarea-notes" placeholder="Specify any explicitly blacklisted vendor platforms or tech requirements..."></textarea>
+            </div>
+        </div>
+
+        <div class="discovery-card">
+            <div class="meta-zone">
+                <label>Target Delivery Timeline</label>
+                <span>Establish scheduling urgency to prioritize internal engineering resource deployment.</span>
+            </div>
+            <div class="interactive-zone">
+                <label class="option-item"><input type="radio" name="timeline"><span class="option-text">Immediate Target (&lt; 1 month)</span></label>
+                <label class="option-item"><input type="radio" name="timeline"><span class="option-text">Strategic Execution (1 – 3 Months)</span></label>
+                <label class="option-item"><input type="radio" name="timeline"><span class="option-text">Planned Expansion (3 – 6 Months)</span></label>
+                <label class="option-item"><input type="radio" name="timeline"><span class="option-text">Strategic exploratory phase / Next fiscal period</span></label>
+            </div>
+            <div class="notes-zone">
+                <textarea class="textarea-notes" placeholder="Track third-party contractual renewal dates driving urgency..."></textarea>
+            </div>
+        </div>
+
+        <div class="discovery-card">
+            <div class="meta-zone">
+                <label>Public Sector Parameters</label>
+                <span>Address specific national constraints required for public sector entities.</span>
+            </div>
+            <div class="interactive-zone">
+                <label class="option-item">
+                    <input type="checkbox">
+                    <span class="option-text"><span class="badge-gov">Gov Requirement</span> Strict Emiratisation workforce targets apply</span>
+                </label>
+                <label class="option-item">
+                    <input type="checkbox">
+                    <span class="option-text"><span class="badge-gov">Gov Requirement</span> Full Arabic localization required for delivery</span>
+                </label>
+            </div>
+            <div class="notes-zone">
+                <textarea class="textarea-notes" placeholder="Log targeted national workforce ratio metrics or reporting parameters..."></textarea>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-branding">
+        Sunrise Networks LLC © 2026 — Secure Confidential Internal Discovery Tool
+    </footer>
+
+</div>
+
+</body>
+</html>
