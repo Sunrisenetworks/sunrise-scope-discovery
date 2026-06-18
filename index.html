@@ -477,14 +477,14 @@
         }
     </style>
 </head>
-<body>
 
+<body>
 <div class="container">
 
     <header class="app-header">
         <div class="brand-info">
             <h1>Sunrise Networks LLC</h1>
-            <p>Cybersecurity & Infrastructure Scoping Tool</p>
+            <p>Cybersecurity, Infrastructure &amp; Collaboration Discovery Tool</p>
         </div>
         <div class="actions-panel">
             <button class="btn" onclick="window.print()">
@@ -496,686 +496,788 @@
     <div class="instruction-card">
         <h3>💡 How To Use This Flow</h3>
         <ul>
-            <li>Lead with curiosity about <strong>their business</strong>, not your form — the questions below are sequenced so the easy, friendly stuff comes first.</li>
-            <li>Each card has a <strong>💬 Try saying</strong> line — a natural way to ask the question out loud, instead of reading it like a form.</li>
-            <li>Budget and procurement now come <strong>later</strong>, once you've built some rapport and shown you understand their world — not in the first five minutes.</li>
-            <li>Tap into the <strong>Notes / Context</strong> area on the right to capture things in their own words.</li>
-            <li>When done, tap <strong>Save as PDF</strong> above to store a clean copy.</li>
+            <li>Lead with the business problem first, then use the answers to map the right solution set.</li>
+            <li>Each card is written to surface opportunities across cybersecurity, infrastructure, collaboration, backup, network, and physical security.</li>
+            <li>Use the Notes / Context area on the right to capture the client’s own language, timelines, and named systems.</li>
+            <li>When done, tap <strong>Save as PDF</strong> above to keep a clean working copy.</li>
         </ul>
     </div>
 
     <section>
-        <h2>👋 1. Getting Acquainted</h2>
+        <h2>👋 1. Business Drivers &amp; Stakeholders</h2>
 
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Quick Intro</label>
-                <span>Just enough to keep notes straight — keep this brief and move on quickly.</span>
-                <span class="say-it">💬 Try saying: "Before we get into it, mind if I jot down a couple of details for my notes — your company name and your name/title?"</span>
-            </div>
-            <div class="interactive-zone">
-                <div style="margin-bottom: 10px;">
-                    <label class="input-group-label">Company Name</label>
-                    <input type="text" class="text-input-field" placeholder="Type company name...">
-                </div>
-                <div>
-                    <label class="input-group-label">Primary Stakeholder & Title</label>
-                    <input type="text" class="text-input-field" placeholder="Full name, title, email...">
-                </div>
-                <div style="margin-top: 10px; display: flex; gap: 8px;">
-                    <label class="option-item"><input type="radio" name="segment"><span class="option-text">Gov</span></label>
-                    <label class="option-item"><input type="radio" name="segment"><span class="option-text">Enterprise</span></label>
-                    <label class="option-item"><input type="radio" name="segment"><span class="option-text">SMB</span></label>
-                </div>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Note down nested divisions, subsidiary names or direct contact details..."></textarea>
-            </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Account Snapshot</label>
+            <span>Capture the basic account details first, then identify which solution area matters most so the conversation stays commercial from the start.</span>
+            <span class="say-it">💬 Try saying: "Before we go deeper, can I capture the company name, your role, and the main area you want help with today?"</span>
         </div>
+        <div class="interactive-zone">
+            
+<div style="margin-bottom: 10px;">
+    <label class="input-group-label">Company Name</label>
+    <input type="text" class="text-input-field" placeholder="Type company name...">
+</div>
+<div style="margin-bottom: 10px;">
+    <label class="input-group-label">Primary Stakeholder &amp; Title</label>
+    <input type="text" class="text-input-field" placeholder="Full name, title, email...">
+</div>
+<label class="input-group-label">Primary Solution Area</label>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+    <label class="option-item"><input type="radio" name="primary_area"><span class="option-text">Cybersecurity</span></label>
+    <label class="option-item"><input type="radio" name="primary_area"><span class="option-text">Network / Connectivity</span></label>
+    <label class="option-item"><input type="radio" name="primary_area"><span class="option-text">Servers / Storage / Virtualization</span></label>
+    <label class="option-item"><input type="radio" name="primary_area"><span class="option-text">Backup / DR</span></label>
+    <label class="option-item"><input type="radio" name="primary_area"><span class="option-text">Collaboration / Microsoft 365</span></label>
+    <label class="option-item"><input type="radio" name="primary_area"><span class="option-text">CCTV / Cabling / Physical Infrastructure</span></label>
+</div>
 
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>What Brought You to Us?</label>
-                <span>The most important question of the call. Let them talk — this tells you what actually matters, and earns you the right to ask everything else.</span>
-                <span class="say-it">💬 Try saying: "So tell me a bit about what's going on — what made you want to have this conversation today?"</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="input-group-label">Once they've answered, tag the themes you heard</label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Worried about ransomware / a security scare</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Audit, pen-test, or compliance deadline coming up</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Growing fast / cloud migration / hybrid workforce</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Frustrated with current provider / costs</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Just exploring / benchmarking options</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Capture it in their own words — this is gold for the proposal later..."></textarea>
-            </div>
         </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Their World, In Brief</label>
-                <span>Just enough scale to picture their environment — framed as curiosity, not a census.</span>
-                <span class="say-it">💬 Try saying: "Just so I can picture it — roughly how many people are you supporting, and is that one location or a few?"</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="input-group-label">Roughly How Many People/Devices</label>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-                    <label class="option-item"><input type="radio" name="endpoints"><span class="option-text">&lt; 50</span></label>
-                    <label class="option-item"><input type="radio" name="endpoints"><span class="option-text">50 – 250</span></label>
-                    <label class="option-item"><input type="radio" name="endpoints"><span class="option-text">251 – 500</span></label>
-                    <label class="option-item"><input type="radio" name="endpoints"><span class="option-text">500 – 2k</span></label>
-                    <label class="option-item" style="grid-column: span 2;"><input type="radio" name="endpoints"><span class="option-text">More than 2,000 endpoints</span></label>
-                </div>
-                <label class="input-group-label" style="margin-top: 10px;">Roughly How Many Locations</label>
-                <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                    <label class="option-item"><input type="radio" name="sites"><span class="option-text">1 Site</span></label>
-                    <label class="option-item"><input type="radio" name="sites"><span class="option-text">2 – 5</span></label>
-                    <label class="option-item"><input type="radio" name="sites"><span class="option-text">6 – 20</span></label>
-                    <label class="option-item"><input type="radio" name="sites"><span class="option-text">20+</span></label>
-                </div>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Log geographical concentration or presence of cloud-only work models..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>How IT Runs Day-to-Day</label>
-                <span>Shows you're trying to fit into their world, not barge into someone else's turf.</span>
-                <span class="say-it">💬 Try saying: "Who looks after IT day-to-day for you — an in-house team, an outside provider, or a bit of both?"</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="radio" name="it_model"><span class="option-text">Fully In-House Technology Team</span></label>
-                <label class="option-item"><input type="radio" name="it_model"><span class="option-text">Outsourced to Managed Service Provider (MSP)</span></label>
-                <label class="option-item"><input type="radio" name="it_model"><span class="option-text">Co-Managed / Hybrid (In-house + MSP support)</span></label>
-                <label class="option-item"><input type="radio" name="it_model"><span class="option-text">Ad-hoc support dependency / Unmanaged</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Log internal engineering constraints or current vendor names..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Growth & Change on the Horizon</label>
-                <span>Future plans shape what you scope today — easy, forward-looking, no risk to ask.</span>
-                <span class="say-it">💬 Try saying: "Anything on the horizon — headcount growth, new offices, M&A — that we should be planning around?"</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="checkbox"><span class="option-text">Headcount growing significantly in next 12 months</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Opening new offices / branch locations</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">M&A, divestiture, or restructuring in progress</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Steady state / no major changes expected</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Note expansion timelines or integration complexities that could affect scope..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Who Else Is in the Room?</label>
-                <span>Map the buying circle early and casually — saves you from surprises later.</span>
-                <span class="say-it">💬 Try saying: "Besides yourself, who else usually weighs in on a decision like this — IT, finance, leadership?"</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="checkbox"><span class="option-text">IT / Security team has a say</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Finance / Procurement involved</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Executive leadership or board sign-off needed</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">This contact is the sole decision-maker</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Note names/titles of other influencers worth looping in..."></textarea>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>🖥️ 2. Current IT & Security Architecture</h2>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Data Hosting Footprint</label>
-                <span>Locate primary computing workloads to evaluate perimeter boundary protection.</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="checkbox"><span class="option-text">On-Premises Core Data Centre</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">National Local Cloud (G42, Khazna, etc.)</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Global Public Cloud (Azure, AWS, GCP)</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Hybrid Configuration Mix</span></label>
-                <label class="option-item">
-                    <input type="checkbox">
-                    <span class="option-text"><span class="badge-ot">OT Exposure</span> Includes active SCADA / ICS environments</span>
-                </label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Document critical business app structures (e.g., SAP, O365, local web farms)..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Cloud & Productivity Suite</label>
-                <span>Email and SaaS sprawl is where a lot of real-world risk actually lives.</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="radio" name="suite"><span class="option-text">Microsoft 365</span></label>
-                <label class="option-item"><input type="radio" name="suite"><span class="option-text">Google Workspace</span></label>
-                <label class="option-item"><input type="radio" name="suite"><span class="option-text">Legacy on-prem Exchange / mail server</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Unsanctioned SaaS sprawl suspected ("Shadow IT")</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="List key SaaS tools in use and who owns/governs onboarding new ones..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Remote Access & Endpoint Management</label>
-                <span>Critical given hybrid work — this is where unmanaged risk usually hides.</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="checkbox"><span class="option-text">Centrally managed MDM/UEM across devices</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">VPN or Zero Trust remote access configured</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">BYOD policy formally documented</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Devices/laptops largely unmanaged</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Note current MDM/VPN vendors or known gaps in device coverage..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Active Controls Stack</label>
-                <span>Identify current defenses to map security integration opportunities.</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="input-group-label">Running Controls (Select all that apply)</label>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Next-Gen Firewall</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Antivirus / EDR</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Identity MFA</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">SIEM Central Logs</span></label>
-                    <label class="option-item" style="grid-column: span 2;"><input type="checkbox"><span class="option-text">Automated Off-site Backups</span></label>
-                </div>
-                <label class="input-group-label" style="margin-top: 10px;">Monitoring & Verification Visibility</label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Active 24/7 Monitoring SOC Capability</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Routine Penetration Testing Conducted Annually</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Identify software brands (e.g., Palo Alto, Fortinet, CrowdStrike) currently running..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Backup & Disaster Recovery Detail</label>
-                <span>"We have backups" and "we have tested, recoverable backups" are very different answers.</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="checkbox"><span class="option-text">Backups tested via regular restore drills</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Offsite/cloud immutable backup copy maintained</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Defined RPO/RTO targets documented</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Backup strategy informal or unverified</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Note current backup vendor, retention period, and last successful restore test..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Security Journey</label>
-                <span>Frame this as learning their story, not auditing them — most clients have one.</span>
-                <span class="say-it">💬 Try saying: "Has anything happened in the past year or two that gave you all a scare — a phishing attempt, an outage, anything like that?"</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="checkbox"><span class="option-text">Ransomware / Extortion Incident</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Business Email Compromise (BEC) / Phishing loss</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Data Leak / Corporate Credential Compromise</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Clean record / No major recent exploits reported</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Isolate technical blast impact metrics or remediation outcomes..."></textarea>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>⚖️ 3. Compliance & Resilience Drivers</h2>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Compliance Frameworks</label>
-                <span>Determine compliance obligations to track mandatory engineering criteria.</span>
-            </div>
-            <div class="interactive-zone">
-                <div style="display: grid; grid-template-columns: 1fr; gap: 2px;">
-                    <label class="option-item"><input type="checkbox"><span class="option-text">NESA / IA Standards Alignment</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">UAE Central Bank (CBUAE) Directives</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">UAE Personal Data Protection Law (PDPL)</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">ISO 27001 / NIST CSF Target Alignment</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">ADGM / DFSA Regulatory Modules</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">No strict statutory driver currently active</span></label>
-                </div>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Capture specific upcoming audit milestones or active non-compliance warnings..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Data Sovereignty</label>
-                <span>Verify jurisdictional residency laws governing target corporate records.</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="radio" name="sovereign"><span class="option-text">Strict Rule: All data must live inside the UAE</span></label>
-                <label class="option-item"><input type="radio" name="sovereign"><span class="option-text">GCC-regional data storage is acceptable</span></label>
-                <label class="option-item"><input type="radio" name="sovereign"><span class="option-text">No boundaries / Sovereign hosting not restricted</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Isolate specific components requiring isolated local placement..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Third-Party & Vendor Risk</label>
-                <span>Outside access is one of the most common breach paths — worth a direct look.</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="checkbox"><span class="option-text">Vendors/contractors have direct network access</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Formal vendor risk assessment process exists</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Supply chain risk a known active concern</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Not yet assessed</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Name key vendors with privileged access or known supply-chain exposure..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Business Continuity Plan</label>
-                <span>Measure disaster readiness and response recovery capabilities.</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="checkbox"><span class="option-text">Has documented & tested Incident Response Plan (IRP)</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Has functional Business Continuity / DR strategies</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Plans exist but are informal or outdated</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">No documented continuity structures ready</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Identify strict Recovery Time Objectives (RTO) or critical application priorities..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Cyber Insurance</label>
-                <span>Insurers increasingly mandate specific controls — a great natural lead-in to scope.</span>
-                <span class="say-it">💬 Try saying: "Do you currently carry cyber insurance? Sometimes the insurer's own requirements end up shaping what we'd recommend."</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="radio" name="cyber_insurance"><span class="option-text">Active policy in place / renewal underway</span></label>
-                <label class="option-item"><input type="radio" name="cyber_insurance"><span class="option-text">Insurer requesting evidence of specific controls</span></label>
-                <label class="option-item"><input type="radio" name="cyber_insurance"><span class="option-text">No cyber insurance currently held</span></label>
-                <label class="option-item"><input type="radio" name="cyber_insurance"><span class="option-text">Considering obtaining coverage</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Note insurer name, renewal date, or specific control requirements flagged in the questionnaire..."></textarea>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>🚀 4. Scope, Budget & Next Steps</h2>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Defining Success</label>
-                <span>The needs-payoff question — anchors the whole proposal to their definition of a win, not yours.</span>
-                <span class="say-it">💬 Try saying: "If we fast-forward 12 months and this was a clear win for you, what would that actually look like?"</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="checkbox"><span class="option-text">Measurably reduced incident/breach risk</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Passed an audit or compliance milestone</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Freed up internal IT time/headcount</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Lower total cost vs. current setup</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Capture their definition of success in their own words — use it in the proposal..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Requested Services</label>
-                <span>Map desired solutions to scope the upcoming technical proposal.</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="checkbox"><span class="option-text">24/7 Managed SOC (SIEM/XDR)</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Penetration Testing / VAPT Scans</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">GRC Services & vCISO Consultancy</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Managed Firewalls & Network Security</span></label>
-                <label class="option-item"><input type="checkbox"><span class="option-text">Incident Response Retainer Facility</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Note down any specific solution requirements or scoping boundaries..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Vendor Ecosystem Alignment</label>
-                <span>Identify vendor preferences to leverage existing toolsets or skills.</span>
-            </div>
-            <div class="interactive-zone">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Microsoft Ecosystem</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Palo Alto Networks</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">CrowdStrike / S1</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Fortinet / Check Point</span></label>
-                    <label class="option-item" style="grid-column: span 2;"><input type="checkbox"><span class="option-text">Vendor-Agnostic (Best performance / price mix)</span></label>
-                </div>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Specify any explicitly blacklisted vendor platforms or tech requirements..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Target Delivery Timeline</label>
-                <span>Establish scheduling urgency to prioritize internal engineering resource deployment.</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="radio" name="timeline"><span class="option-text">Immediate Target (&lt; 1 month)</span></label>
-                <label class="option-item"><input type="radio" name="timeline"><span class="option-text">Strategic Execution (1 – 3 Months)</span></label>
-                <label class="option-item"><input type="radio" name="timeline"><span class="option-text">Planned Expansion (3 – 6 Months)</span></label>
-                <label class="option-item"><input type="radio" name="timeline"><span class="option-text">Strategic exploratory phase / Next fiscal period</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Track third-party contractual renewal dates driving urgency..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Decision Process & Stakeholders</label>
-                <span>Confirms who actually needs to say yes before you build a proposal nobody can approve.</span>
-                <span class="say-it">💬 Try saying: "Walking into next steps — besides you, who else needs to sign off before we can move forward?"</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="radio" name="approval"><span class="option-text">Final approver is in this conversation</span></label>
-                <label class="option-item"><input type="radio" name="approval"><span class="option-text">Needs technical sign-off (IT/Security)</span></label>
-                <label class="option-item"><input type="radio" name="approval"><span class="option-text">Needs financial/procurement sign-off</span></label>
-                <label class="option-item"><input type="radio" name="approval"><span class="option-text">Needs board/executive approval</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Note names/titles of approvers and any internal review cadence..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Buying Process</label>
-                <span>By now you've earned the context to ask this directly — it just helps you guide them properly.</span>
-                <span class="say-it">💬 Try saying: "And just so I can guide you the right way — does this need to go through a formal procurement process, or is there flexibility to move directly?"</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="radio" name="buy_path"><span class="option-text">Direct Award (Pre-approved supplier)</span></label>
-                <label class="option-item"><input type="radio" name="buy_path"><span class="option-text">Limited RFP (Shortlisted evaluations)</span></label>
-                <label class="option-item"><input type="radio" name="buy_path"><span class="option-text">Open Public Tender (Tejouri Portal)</span></label>
-                <label class="option-item"><input type="radio" name="buy_path"><span class="option-text">No formal process / Executive sign-off</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Track portal alignment keys or expected RFP publication schedules..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Financial Allocation</label>
-                <span>Ask this to right-size the proposal, not to qualify them out — frame it as being respectful of their time.</span>
-                <span class="say-it">💬 Try saying: "So I don't waste your time with the wrong scope — is there a rough budget range already in mind, or should we build the case first and work backward?"</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item"><input type="radio" name="budget"><span class="option-text">Under AED 150K / year</span></label>
-                <label class="option-item"><input type="radio" name="budget"><span class="option-text">AED 150K – 500K / year</span></label>
-                <label class="option-item"><input type="radio" name="budget"><span class="option-text">AED 500K – 2M / year</span></label>
-                <label class="option-item"><input type="radio" name="budget"><span class="option-text">Over AED 2M / year</span></label>
-                <label class="option-item"><input type="radio" name="budget"><span class="option-text">Monthly subscription structure (SMB model)</span></label>
-                <label class="option-item"><input type="radio" name="budget"><span class="option-text">Not yet defined — build the case first</span></label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Note down constraints, Capex vs. Opex biases, or fiscal year boundaries..."></textarea>
-            </div>
-        </div>
-
-        <div class="discovery-card">
-            <div class="meta-zone">
-                <label>Public Sector Parameters</label>
-                <span>Address specific national constraints required for public sector entities.</span>
-            </div>
-            <div class="interactive-zone">
-                <label class="option-item">
-                    <input type="checkbox">
-                    <span class="option-text"><span class="badge-gov">Gov Requirement</span> Strict Emiratisation workforce targets apply</span>
-                </label>
-                <label class="option-item">
-                    <input type="checkbox">
-                    <span class="option-text"><span class="badge-gov">Gov Requirement</span> Full Arabic localization required for delivery</span>
-                </label>
-            </div>
-            <div class="notes-zone">
-                <textarea class="textarea-notes" placeholder="Log targeted national workforce ratio metrics or reporting parameters..."></textarea>
-            </div>
-        </div>
-    </section>
-
-    <div class="branch-selector-panel" style="margin: 36px 0; background: #e2e8f0; padding: 16px; border-radius: 12px; border: 1px solid #cbd5e1;">
-        <p style="margin: 0 0 12px 0; font-size: 14px; font-weight: 700; color: #334155; text-align: center; text-transform: uppercase; letter-spacing: 0.5px;">
-            🎯 Core Architectural Tracks Discovery
-        </p>
-        <div style="display: flex; flex-direction: column; gap: 12px; max-width: 600px; margin: 0 auto;">
-            <button type="button" class="btn btn-secondary" id="toggle-cybersec" onclick="toggleDeepDive('cybersec-dive', this, '🔒')">
-                🔒 Expand Cybersecurity Scoping
-            </button>
-            <button type="button" class="btn btn-secondary" id="toggle-network" onclick="toggleDeepDive('network-infra-dive', this, '🌐')">
-                🌐 Expand Network Infrastructure Scoping
-            </button>
-        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Add subsidiaries, reporting lines, or any secondary contact details..."></textarea></div>
     </div>
-
-    <div id="cybersec-dive" class="deep-dive-section" style="display: none;">
-        <section>
-            <h2>🔒 Deep-Dive: Cybersecurity Controls Scoping</h2>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>What Is Driving The Conversation?</label>
+            <span>This is the key qualification question. It reveals whether the opportunity is a security fix, an infrastructure refresh, a collaboration issue, or a broader transformation project.</span>
+            <span class="say-it">💬 Try saying: "What prompted you to speak with us now — a risk, a refresh, a migration, or a service gap?"</span>
+        </div>
+        <div class="interactive-zone">
             
-            <div class="discovery-card">
-                <div class="meta-zone">
-                    <label>Identity & Perimeter Security</label>
-                    <span>Assess structural access tracking mechanisms and centralized authorization matrices.</span>
-                </div>
-                <div class="interactive-zone">
-                    <label class="input-group-label">Current Authentication Capabilities</label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Single Sign-On (SSO) active across all core enterprise apps</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Privileged Access Management (PAM) deployed for infrastructure roots</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Strict Conditional Access Profiles enforced (Geo-fencing, Device health)</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Central Identity Synchronized (Entra ID, Okta, Active Directory)</span></label>
-                </div>
-                <div class="notes-zone">
-                    <textarea class="textarea-notes" placeholder="Log specific identity directory structures, legacy non-SSO applications, or access exceptions..."></textarea>
-                </div>
-            </div>
+<label class="input-group-label">Tag the themes you hear</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Security incident, near miss, or rising threat concern</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Email / collaboration pain or Microsoft 365 migration need</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Network, Wi-Fi, WAN, or branch connectivity issue</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Server, storage, or virtualization refresh requirement</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Backup, DR, or recovery gap</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Compliance, audit, or governance pressure</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">CCTV, cabling, or physical security requirement</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Cost reduction or vendor consolidation</span></label>
 
-            <div class="discovery-card">
-                <div class="meta-zone">
-                    <label>Data Protection & Exfiltration</label>
-                    <span>Analyze defense-in-depth layout for sensitive structural storage repositories.</span>
-                </div>
-                <div class="interactive-zone">
-                    <label class="input-group-label">Threat Remediation Mechanisms</label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Data Loss Prevention (DLP) agent active on endpoints</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Secure Email Gateway (SEG) with DMARC/DKIM isolation active</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Cloud Access Security Broker (CASB) filtering cloud interactions</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Full disk encryption uniformly deployed across endpoints</span></label>
-                </div>
-                <div class="notes-zone">
-                    <textarea class="textarea-notes" placeholder="Track third-party document protection suites or structured classification parameters..."></textarea>
-                </div>
-            </div>
-            
-            <div class="discovery-card">
-                <div class="meta-zone">
-                    <label>Cloud Security Posture</label>
-                    <span>Misconfigured cloud resources are now a bigger breach vector than most legacy endpoints.</span>
-                </div>
-                <div class="interactive-zone">
-                    <label class="input-group-label">Cloud Workload Protection</label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">CSPM tool monitoring cloud misconfigurations</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Cloud Workload Protection (CWPP) deployed</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Infrastructure-as-Code security scanning in CI/CD</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Cloud security largely unmanaged / ad-hoc</span></label>
-                </div>
-                <div class="notes-zone">
-                    <textarea class="textarea-notes" placeholder="Note cloud provider(s) in use and any known misconfiguration incidents..."></textarea>
-                </div>
-            </div>
-
-            <div class="discovery-card">
-                <div class="meta-zone">
-                    <label>Vulnerability Lifecycle Management</label>
-                    <span>Map structural visibility workflows into internal computing environments.</span>
-                </div>
-                <div class="interactive-zone">
-                    <label class="input-group-label">Assessment Maturity</label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Continuous internal vulnerability scanning engine deployed</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Strict automated orchestration framework handles regular patch cycles</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Comprehensive up-to-date hardware & software asset inventory verified</span></label>
-                </div>
-                <div class="notes-zone">
-                    <textarea class="textarea-notes" placeholder="Identify current vulnerability scanning engines (e.g., Tenable, Qualys, Rapid7) in play..."></textarea>
-                </div>
-            </div>
-
-            <div class="discovery-card">
-                <div class="meta-zone">
-                    <label>Human Layer & Security Awareness</label>
-                    <span>Most breaches start with a person, not a server — worth scoping like any other control.</span>
-                </div>
-                <div class="interactive-zone">
-                    <label class="input-group-label">Awareness Program Maturity</label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Phishing simulation campaigns run regularly</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Formal security awareness training program active</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">New-hire security onboarding included</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">No structured awareness program currently</span></label>
-                </div>
-                <div class="notes-zone">
-                    <textarea class="textarea-notes" placeholder="Note current awareness platform (e.g., KnowBe4, Proofpoint) or training cadence..."></textarea>
-                </div>
-            </div>
-        </section>
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Capture the problem in the client’s own words..."></textarea></div>
     </div>
-
-    <div id="network-infra-dive" class="deep-dive-section" style="display: none;">
-        <section>
-            <h2>🌐 Deep-Dive: Network Infrastructure Scoping</h2>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Environment Size &amp; Complexity</label>
+            <span>A clear view of users, endpoints, sites, servers, and cloud sprawl helps right-size the scope for security and infrastructure work.</span>
+            <span class="say-it">💬 Try saying: "Just so I can picture the environment, roughly how many users, devices, sites, and core systems are we talking about?"</span>
+        </div>
+        <div class="interactive-zone">
             
-            <div class="discovery-card">
-                <div class="meta-zone">
-                    <label>Edge Connectivity & WAN Topology</label>
-                    <span>Map data transit pathways between site footprints and central boundaries.</span>
-                </div>
-                <div class="interactive-zone">
-                    <label class="input-group-label">Edge Operations Matrix</label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Multi-ISP Failover configured with active BGP routing optimization</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Active SD-WAN mesh architecture operating across branch offices</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Dedicated MPLS Circuits cross-connecting branch systems</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Direct Cloud Interconnect pipes active (ExpressRoute, Direct Connect)</span></label>
-                </div>
-                <div class="notes-zone">
-                    <textarea class="textarea-notes" placeholder="Detail ISP providers, corporate contract renewal dates, or bandwidth constraints per site..."></textarea>
-                </div>
-            </div>
+<label class="input-group-label">Approximate Scale</label>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+    <label class="option-item"><input type="radio" name="scale"><span class="option-text">< 50 users / endpoints</span></label>
+    <label class="option-item"><input type="radio" name="scale"><span class="option-text">50 – 250</span></label>
+    <label class="option-item"><input type="radio" name="scale"><span class="option-text">251 – 500</span></label>
+    <label class="option-item"><input type="radio" name="scale"><span class="option-text">500 – 2k</span></label>
+    <label class="option-item"><input type="radio" name="scale"><span class="option-text">2k+ endpoints</span></label>
+    <label class="option-item"><input type="radio" name="scale"><span class="option-text">Not yet defined</span></label>
+</div>
+<label class="input-group-label" style="margin-top: 10px;">Operational Footprint</label>
+<div style="display: flex; flex-wrap: wrap; gap: 4px;">
+    <label class="option-item"><input type="radio" name="footprint"><span class="option-text">1 site / office</span></label>
+    <label class="option-item"><input type="radio" name="footprint"><span class="option-text">2 – 5 sites</span></label>
+    <label class="option-item"><input type="radio" name="footprint"><span class="option-text">6 – 20 sites</span></label>
+    <label class="option-item"><input type="radio" name="footprint"><span class="option-text">Cloud-first / distributed workforce</span></label>
+</div>
 
-            <div class="discovery-card">
-                <div class="meta-zone">
-                    <label>Core Switching & Access Distribution</label>
-                    <span>Evaluate the hardware foundation of the on-premises switching layer.</span>
-                </div>
-                <div class="interactive-zone">
-                    <label class="input-group-label">Switching Layer Features</label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Layer 3 Core routing architecture configured internally</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Granular VLAN segmentation deployed (Data, Voice, IoT, Guest)</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Power over Ethernet (PoE/PoE+) provisioning required across access blocks</span></label>
-                    <label class="option-item">
-                        <input type="checkbox">
-                        <span class="option-text"><span class="badge-infra">Lifecycle Risk</span> Legacy switching hardware running past End-of-Life (EOL)</span>
-                    </label>
-                </div>
-                <div class="notes-zone">
-                    <textarea class="textarea-notes" placeholder="Map core switching fabric specifications, ports counts, and stacked configuration properties..."></textarea>
-                </div>
-            </div>
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Note server count, storage growth, remote users, and any critical systems..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>How Is Support Delivered Today?</label>
+            <span>This identifies whether the customer is in-house, outsourced, or co-managed, which determines where Sunrise can add immediate value.</span>
+            <span class="say-it">💬 Try saying: "Who handles day-to-day support today — your internal team, an MSP, or a mix of both?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="option-item"><input type="radio" name="support_model"><span class="option-text">Fully in-house team</span></label>
+<label class="option-item"><input type="radio" name="support_model"><span class="option-text">MSP / outsourced support</span></label>
+<label class="option-item"><input type="radio" name="support_model"><span class="option-text">Co-managed / hybrid model</span></label>
+<label class="option-item"><input type="radio" name="support_model"><span class="option-text">Project-by-project support only</span></label>
+<label class="option-item"><input type="radio" name="support_model"><span class="option-text">Ad-hoc / undocumented ownership</span></label>
 
-            <div class="discovery-card">
-                <div class="meta-zone">
-                    <label>Wireless Access Density</label>
-                    <span>Determine wireless coverage scale and internal segment isolation layers.</span>
-                </div>
-                <div class="interactive-zone">
-                    <label class="input-group-label">Wireless Access Matrix</label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">High-Density Wi-Fi 6 / 6E / 7 access arrays uniformly provisioned</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Centralized controller-managed access structure (Cloud or Local appliance)</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Isolated Guest Portal engine active with independent SMS/Email verification</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Rogue Access Point detection mechanisms running continuously</span></label>
-                </div>
-                <div class="notes-zone">
-                    <textarea class="textarea-notes" placeholder="Log physical space layout, estimated maximum concurrent wireless users, or current AP brand preferences..."></textarea>
-                </div>
-            </div>
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="List current vendors, support SLAs, and ownership gaps..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>What Changes Are Coming Next?</label>
+            <span>Growth, mergers, site openings, and migrations are the triggers that usually create demand for infrastructure and security work.</span>
+            <span class="say-it">💬 Try saying: "What is expected to change over the next 6 to 12 months that we should plan around?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="option-item"><input type="checkbox"><span class="option-text">Headcount growth</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">New office / branch / warehouse</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Cloud or M365 migration</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">M&amp;A, restructuring, or integration</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Steady state / no major change</span></label>
 
-            <div class="discovery-card">
-                <div class="meta-zone">
-                    <label>Network Visibility & Monitoring</label>
-                    <span>You can't fix what you can't see — gauges how blind the current team is to issues.</span>
-                </div>
-                <div class="interactive-zone">
-                    <label class="input-group-label">Observability Maturity</label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Centralized network monitoring (SNMP/NetFlow) active</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Automated alerting on outages/link failures</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Network documentation (diagrams, IPAM) up to date</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Limited visibility / reactive troubleshooting only</span></label>
-                </div>
-                <div class="notes-zone">
-                    <textarea class="textarea-notes" placeholder="Identify current monitoring platform (e.g., SolarWinds, PRTG, LibreNMS) in use..."></textarea>
-                </div>
-            </div>
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Add dates, project phases, or executive deadlines..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Who Needs To Approve It?</label>
+            <span>Early visibility into the buying group prevents a proposal being built for the wrong audience.</span>
+            <span class="say-it">💬 Try saying: "Besides you, who else usually needs to weigh in before this can move forward?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="option-item"><input type="checkbox"><span class="option-text">IT / infrastructure team</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Security / risk team</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Finance / procurement</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Executive leadership / board</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Facilities / operations</span></label>
 
-            <div class="discovery-card">
-                <div class="meta-zone">
-                    <label>Physical Infrastructure & Power</label>
-                    <span>Often overlooked, but it dictates real project feasibility and risk.</span>
-                </div>
-                <div class="interactive-zone">
-                    <label class="input-group-label">Facility Readiness</label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Redundant power (UPS/generator) for core network gear</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Dedicated server room/rack with cooling</span></label>
-                    <label class="option-item"><input type="checkbox"><span class="option-text">Structured cabling certified & documented</span></label>
-                    <label class="option-item">
-                        <input type="checkbox">
-                        <span class="option-text"><span class="badge-infra">Lifecycle Risk</span> Aging power/cooling infrastructure a known concern</span>
-                    </label>
-                </div>
-                <div class="notes-zone">
-                    <textarea class="textarea-notes" placeholder="Note rack space availability, power capacity headroom, or cooling constraints..."></textarea>
-                </div>
-            </div>
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Capture approver names, roles, and internal review cadence..."></textarea></div>
+    </div>
+</section>
+
+<section>
+    <h2>🖥️ 2. Current Environment &amp; Tooling</h2>
+
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Workload &amp; Data Hosting Footprint</label>
+            <span>Understand where production workloads, sensitive data, archives, and backups live so the right security and resilience services can be scoped.</span>
+            <span class="say-it">💬 Try saying: "Where do your business applications, data, and backups primarily live today?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="option-item"><input type="checkbox"><span class="option-text">On-premises data centre / server room</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Private cloud / colocation / local hosting</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Public cloud (Azure, AWS, GCP)</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Hybrid mix of on-prem and cloud</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">OT / SCADA / ICS environment present</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Note core applications, data sensitivity, and host locations..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Collaboration, Email &amp; Identity</label>
+            <span>This surfaces Microsoft 365, Google Workspace, mail security, identity gaps, and migration opportunities.</span>
+            <span class="say-it">💬 Try saying: "What are you using today for email, collaboration, and identity management?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="input-group-label">Current Collaboration / Email Stack</label>
+<label class="option-item"><input type="radio" name="collab"><span class="option-text">Microsoft 365</span></label>
+<label class="option-item"><input type="radio" name="collab"><span class="option-text">Google Workspace</span></label>
+<label class="option-item"><input type="radio" name="collab"><span class="option-text">Legacy on-prem Exchange / mail server</span></label>
+<label class="option-item"><input type="radio" name="collab"><span class="option-text">Mixed / fragmented / shadow IT tools</span></label>
+<label class="input-group-label" style="margin-top: 10px;">Concerns or Gaps</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Phishing / spam / impersonation concern</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Identity sprawl or weak access control</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Migration planned or already in progress</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="List identity provider, mail platform, and any security add-ons..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Servers, Storage &amp; Virtualization</label>
+            <span>This question maps directly to compute, storage, hypervisor, and migration opportunities across the infrastructure portfolio.</span>
+            <span class="say-it">💬 Try saying: "What is running your servers, storage, and virtualized workloads today?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="input-group-label">Core Platforms in Use</label>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+    <label class="option-item"><input type="checkbox"><span class="option-text">HPE / HPE Aruba infrastructure</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Dell infrastructure</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Lenovo / Cisco servers</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Nutanix / VMware / Hyper-V</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Synology / Pure Storage / enterprise storage</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Aging platform or end-of-life risk</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Performance or capacity constraint</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">VM or storage migration planned</span></label>
+</div>
+<label class="input-group-label" style="margin-top: 10px;">Lifecycle / Migration Signals</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Need AMC or proactive maintenance</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Need data centre refresh</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Need backup integration with storage</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Capture server count, hypervisor, storage vendor, and refresh timing..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Network Access, WAN &amp; Remote Work</label>
+            <span>This uncovers branch connectivity, SD-WAN/SASE demand, VPN usage, and remote access gaps.</span>
+            <span class="say-it">💬 Try saying: "How do branch offices, remote users, and mobile staff connect back to your network today?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="input-group-label">Connectivity Model</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">MPLS / leased lines</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">SD-WAN</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">SASE / Zero Trust remote access</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Direct internet / ad-hoc WAN setup</span></label>
+<label class="input-group-label" style="margin-top: 10px;">Access / Remote Work Controls</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">VPN in use</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">BYOD policy documented</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Remote access largely unmanaged</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Need branch optimisation</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Record ISP names, link types, bandwidth issues, and remote work pain..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Security Controls Already Deployed</label>
+            <span>Map the existing controls to the Sunrise security stack: firewall, EDR, MFA, PAM, DLP, email security, and monitoring.</span>
+            <span class="say-it">💬 Try saying: "Which security controls are already running in the environment?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="input-group-label">Current Control Stack</label>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+    <label class="option-item"><input type="checkbox"><span class="option-text">Next-generation firewall</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Endpoint security / EDR</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">MFA / conditional access</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">SIEM / central log collection</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">PAM / privileged access control</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Email security gateway</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">DLP / CASB / data protection</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Off-site / immutable backups</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Network monitoring / observability</span></label>
+</div>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Note specific vendors and any missing controls..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Backup, DR &amp; Recovery</label>
+            <span>This makes backup and disaster recovery maturity visible, including restore testing, replication, and target recovery times.</span>
+            <span class="say-it">💬 Try saying: "If an outage or ransomware event happened today, how quickly could you restore critical systems?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="option-item"><input type="checkbox"><span class="option-text">Backups are tested regularly</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Immutable / off-site copy exists</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Replication or DR site configured</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">RPO / RTO targets are documented</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Recovery procedures are informal or untested</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">No clear backup / DR owner</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Record backup vendor, retention, last restore test, and DR approach..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>CCTV, Cabling &amp; Physical Infrastructure</label>
+            <span>This brings the physical layer into scope so CCTV, structured cabling, racks, cooling, and power do not get missed.</span>
+            <span class="say-it">💬 Try saying: "Do you have any physical infrastructure, CCTV, or cabling work that should be included alongside the IT scope?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="input-group-label">Physical Layer Coverage</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">CCTV coverage required or in place</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">NVR / recording retention concerns</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Structured cabling needed or due for refresh</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Rack / server room / cooling concerns</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">UPS / generator / power resilience gap</span></label>
+<label class="input-group-label" style="margin-top: 10px;">Operational Gaps</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Aging cabling or patching issues</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Physical access / surveillance review needed</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Note locations, camera count, cable types, rack constraints, and power issues..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Security Journey</label>
+            <span>Understanding recent incidents or outages helps position SOC, email security, PAM, DR, and monitoring correctly.</span>
+            <span class="say-it">💬 Try saying: "Has anything happened in the last year or two that changed how you think about risk or uptime?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="option-item"><input type="checkbox"><span class="option-text">Ransomware or extortion scare</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Business email compromise / phishing loss</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Data leak or credential compromise</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Major outage / downtime event</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">No major incident so far</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Add incident dates, impact, and whether remediation is already underway..."></textarea></div>
+    </div>
+</section>
+
+<section>
+    <h2>⚖️ 3. Risk, Compliance &amp; Continuity</h2>
+
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Compliance &amp; Governance Drivers</label>
+            <span>This identifies whether the project is being pushed by regulations, customer requirements, internal governance, or a security framework.</span>
+            <span class="say-it">💬 Try saying: "Are there any compliance or governance frameworks shaping what needs to be delivered?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="input-group-label">Applicable Drivers</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">NESA / IA</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">CBUAE / banking directives</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">PDPL / privacy requirements</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">ISO 27001 / NIST alignment</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">ADGM / DFSA / sector regulation</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Customer security questionnaire / contractual requirement</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Capture audit dates, framework owners, and mandatory controls..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Data Residency &amp; Sovereignty</label>
+            <span>This surfaces whether the customer needs UAE-only, GCC, or unrestricted hosting for systems and data.</span>
+            <span class="say-it">💬 Try saying: "Are there any rules about where your data, backups, or systems must be hosted?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="option-item"><input type="radio" name="sovereignty"><span class="option-text">All data must remain in the UAE</span></label>
+<label class="option-item"><input type="radio" name="sovereignty"><span class="option-text">GCC hosting is acceptable</span></label>
+<label class="option-item"><input type="radio" name="sovereignty"><span class="option-text">No strict residency requirement</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Note any application-specific residency requirements..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Third-Party &amp; Privileged Access Risk</label>
+            <span>This is where PAM, vendor access control, and supply-chain risk become visible.</span>
+            <span class="say-it">💬 Try saying: "How are vendor, contractor, and privileged administrator accounts controlled today?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="option-item"><input type="checkbox"><span class="option-text">Vendors have direct access to the network</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Privileged access is centrally managed / vaulted</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Formal vendor risk review exists</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Supply-chain risk is a current concern</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Not yet assessed</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="List third parties with elevated access or recurring remote connectivity..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Business Continuity &amp; Incident Response</label>
+            <span>This shows how ready the customer is for outages, attacks, and recovery events across infrastructure and security.</span>
+            <span class="say-it">💬 Try saying: "Do you have a tested response plan if something serious disrupts operations?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="option-item"><input type="checkbox"><span class="option-text">Incident response plan documented and tested</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Business continuity / DR plan in place</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Plans exist but are informal or outdated</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">No documented continuity structure</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Capture RTOs, RPOs, and any critical applications..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Cyber Insurance &amp; Control Requirements</label>
+            <span>Insurance renewals often drive a very practical set of controls, which can become the basis of the proposal.</span>
+            <span class="say-it">💬 Try saying: "Do you currently carry cyber insurance, or is that being considered?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="option-item"><input type="radio" name="insurance"><span class="option-text">Active policy in place</span></label>
+<label class="option-item"><input type="radio" name="insurance"><span class="option-text">Renewal underway / insurer asking for evidence</span></label>
+<label class="option-item"><input type="radio" name="insurance"><span class="option-text">No cyber insurance currently</span></label>
+<label class="option-item"><input type="radio" name="insurance"><span class="option-text">Considering coverage</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Note insurer, renewal dates, and any requested controls..."></textarea></div>
+    </div>
+</section>
+
+<section>
+    <h2>🚀 4. Solution Scope &amp; Commercials</h2>
+
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>What Would Success Look Like?</label>
+            <span>This anchors the conversation to business outcomes so the eventual proposal reflects the customer’s definition of value.</span>
+            <span class="say-it">💬 Try saying: "If this goes well, what should be different 12 months from now?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="option-item"><input type="checkbox"><span class="option-text">Reduced cyber risk</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Improved uptime / fewer outages</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Faster recovery after incidents</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Lower operational overhead</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Passed audit or customer review</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Capture the customer’s own success metrics..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Which Solution Areas Should We Scope?</label>
+            <span>This is the core portfolio alignment question. It lets Sunrise propose across cybersecurity, infrastructure, collaboration, backup, and physical security in one motion.</span>
+            <span class="say-it">💬 Try saying: "Which solution areas should we include in the next round of recommendations or pricing?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+    <label class="option-item"><input type="checkbox"><span class="option-text">Managed SOC / SIEM / XDR</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Network security / firewall / SASE</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Endpoint security / EDR</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Email &amp; collaboration security</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">MFA / IAM / SSO</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">PAM / privileged access management</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Data security / DLP / CASB</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Backup / DR / resilience</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Servers / storage / virtualization</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Microsoft 365 migration / hardening</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Network infrastructure / Wi-Fi / SD-WAN</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">CCTV / cabling / physical security</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">IT AMC / managed services</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">vCISO / GRC / compliance advisory</span></label>
+</div>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Write down any special scope boundaries, exclusions, or must-have services..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Vendor Ecosystem Alignment</label>
+            <span>Knowing preferred brands helps with sizing, compatibility, and commercial strategy.</span>
+            <span class="say-it">💬 Try saying: "Are there any preferred vendors, or are you looking for a best-fit recommendation regardless of brand?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+    <label class="option-item"><input type="checkbox"><span class="option-text">Microsoft / Entra / M365</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Fortinet / Check Point</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Cisco / Aruba</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">CrowdStrike / Trend Micro</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">CyberArk / PAM stack</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Veeam / Commvault / Acronis</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">HPE / Dell / Lenovo</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">VMware / Hyper-V / Nutanix</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Hikvision / Dahua / Hanwha</span></label>
+    <label class="option-item"><input type="checkbox"><span class="option-text">Vendor-agnostic / best-fit</span></label>
+</div>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="List blacklisted vendors, incumbent platforms, and compatibility constraints..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Target Delivery Timeline</label>
+            <span>Timeline tells you whether this is an urgent fix, a planned refresh, or a longer strategic project.</span>
+            <span class="say-it">💬 Try saying: "When do you need this delivered?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="option-item"><input type="radio" name="timeline"><span class="option-text">Immediate / under 1 month</span></label>
+<label class="option-item"><input type="radio" name="timeline"><span class="option-text">1 – 3 months</span></label>
+<label class="option-item"><input type="radio" name="timeline"><span class="option-text">3 – 6 months</span></label>
+<label class="option-item"><input type="radio" name="timeline"><span class="option-text">Next fiscal period / exploratory</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Capture any hard deadlines or renewal dates..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Decision Process &amp; Stakeholders</label>
+            <span>This clarifies who signs off and whether the buying motion needs technical, financial, or executive approval.</span>
+            <span class="say-it">💬 Try saying: "Besides the main contact, who needs to approve the final decision?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="option-item"><input type="radio" name="approval"><span class="option-text">Final approver is present</span></label>
+<label class="option-item"><input type="radio" name="approval"><span class="option-text">Needs technical sign-off</span></label>
+<label class="option-item"><input type="radio" name="approval"><span class="option-text">Needs financial / procurement sign-off</span></label>
+<label class="option-item"><input type="radio" name="approval"><span class="option-text">Needs executive / board sign-off</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Capture approver names and internal review order..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Buying Process</label>
+            <span>Understanding the procurement path keeps the proposal aligned with reality and avoids friction later.</span>
+            <span class="say-it">💬 Try saying: "Is this usually a direct award, a shortlist, or a formal tender process?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="option-item"><input type="radio" name="buy_path"><span class="option-text">Direct award / pre-approved supplier</span></label>
+<label class="option-item"><input type="radio" name="buy_path"><span class="option-text">Limited RFP / shortlist</span></label>
+<label class="option-item"><input type="radio" name="buy_path"><span class="option-text">Open tender / formal procurement</span></label>
+<label class="option-item"><input type="radio" name="buy_path"><span class="option-text">No formal process / flexible</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Note procurement portals, RFQ dates, or tender cycles..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Budget &amp; Commercial Model</label>
+            <span>This helps frame the proposal at the right level without forcing the customer into an artificial qualification trap.</span>
+            <span class="say-it">💬 Try saying: "Is there a working budget range, or should we build the business case first?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="option-item"><input type="radio" name="budget"><span class="option-text">Under AED 150K / year</span></label>
+<label class="option-item"><input type="radio" name="budget"><span class="option-text">AED 150K – 500K / year</span></label>
+<label class="option-item"><input type="radio" name="budget"><span class="option-text">AED 500K – 2M / year</span></label>
+<label class="option-item"><input type="radio" name="budget"><span class="option-text">Over AED 2M / year</span></label>
+<label class="option-item"><input type="radio" name="budget"><span class="option-text">Monthly subscription model preferred</span></label>
+<label class="option-item"><input type="radio" name="budget"><span class="option-text">Not yet defined / case first</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Capture CapEx vs OpEx preference, fiscal year timing, and any ceiling..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Public Sector Parameters</label>
+            <span>This keeps the form ready for government-style requirements when they are relevant.</span>
+            <span class="say-it">💬 Try saying: "Are there any public sector delivery requirements we need to respect?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="option-item"><input type="checkbox"><span class="option-text">Strict Emiratisation requirements apply</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Arabic localization is required</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Capture any government-specific compliance or reporting requirements..."></textarea></div>
+    </div>
+</section>
+
+<div class="branch-selector-panel" style="margin: 36px 0; background: #e2e8f0; padding: 16px; border-radius: 12px; border: 1px solid #cbd5e1;">
+    <p style="margin: 0 0 12px 0; font-size: 14px; font-weight: 700; color: #334155; text-align: center; text-transform: uppercase; letter-spacing: 0.5px;">
+        🎯 Deep-Dive Solution Tracks
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px; margin: 0 auto;">
+        <button type="button" class="btn btn-secondary" id="toggle-cybersec" onclick="toggleDeepDive('cybersec-dive', this, '🔒')">
+            🔒 Expand Cybersecurity Scoping
+        </button>
+        <button type="button" class="btn btn-secondary" id="toggle-network" onclick="toggleDeepDive('network-infra-dive', this, '🌐')">
+            🌐 Expand Network &amp; Infrastructure Scoping
+        </button>
+    </div>
+</div>
+
+<div id="cybersec-dive" class="deep-dive-section" style="display: none;">
+    <section>
+        <h2>🔒 Deep-Dive: Cybersecurity Scoping</h2>
+
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Identity, MFA &amp; Privileged Access</label>
+            <span>This maps directly to IAM, SSO, MFA, conditional access, and PAM opportunities.</span>
+            <span class="say-it">💬 Try saying: "How are user identities, privileged accounts, and access policies managed today?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="input-group-label">Identity Controls</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">SSO in place across key apps</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">MFA enforced</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Conditional access / device health checks</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">PAM deployed for privileged accounts</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Central identity platform in use</span></label>
+<label class="input-group-label" style="margin-top: 10px;">Gaps</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Legacy or shared admin accounts still exist</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Note Entra ID, Active Directory, Okta, CyberArk, or other identity tools..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Application Security &amp; Data Protection</label>
+            <span>Use this to uncover app-layer controls, DLP, email security, CASB, and data classification needs.</span>
+            <span class="say-it">💬 Try saying: "Which applications or data sets need the strongest protection?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="input-group-label">Protection Mechanisms</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">DLP controls on endpoints or cloud</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Secure email gateway / anti-phishing</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">CASB or SaaS governance</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Encryption / classification</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Web / app security testing</span></label>
+<label class="input-group-label" style="margin-top: 10px;">Additional Needs</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">API or portal security review</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Secure collaboration file sharing</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Capture line-of-business apps, sensitive records, and data handling requirements..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Cloud Security Posture</label>
+            <span>This surfaces CSPM, CWPP, cloud misconfiguration review, and cloud workload protection opportunities.</span>
+            <span class="say-it">💬 Try saying: "How are cloud environments being monitored and protected right now?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="input-group-label">Cloud Protection Stack</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">CSPM in place</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">CWPP or workload protection deployed</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">IaC / CI-CD security scanning</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Cloud security still ad-hoc</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Note provider, tenancy count, and any known misconfiguration concerns..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Security Operations &amp; Visibility</label>
+            <span>This shows whether Sunrise can position SOC, SIEM, MDR, logging, or monitoring services.</span>
+            <span class="say-it">💬 Try saying: "Who is watching alerts, logs, and threats after hours?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="input-group-label">Operations Capabilities</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">SOC monitoring in place</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">SIEM collecting logs centrally</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">EDR alerts actively triaged</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">24/7 monitoring required</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Incident response support needed</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Note current SOC vendor, log sources, and escalation process..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Vulnerability &amp; Patch Management</label>
+            <span>A direct route into scanning, patching, asset inventory, and ongoing hygiene services.</span>
+            <span class="say-it">💬 Try saying: "How do you track vulnerabilities, patches, and asset inventory today?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="input-group-label">Maturity Check</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Regular vulnerability scans</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Automated patch management</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Up-to-date asset inventory</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Patch / remediation is inconsistent</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Capture tools such as Tenable, Qualys, Rapid7, or internal patch tools..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>User Awareness &amp; Phishing Resistance</label>
+            <span>This creates a clean segue into awareness training and phishing simulation services.</span>
+            <span class="say-it">💬 Try saying: "How are users trained to spot phishing, fraud, and social engineering attacks?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="input-group-label">Awareness Program</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Regular phishing simulations</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Formal security awareness program</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">New-hire security onboarding</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">No structured awareness program</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Capture training cadence and current platform if one exists..."></textarea></div>
+    </div>
+    </section>
+</div>
+
+<div id="network-infra-dive" class="deep-dive-section" style="display: none;">
+    <section>
+        <h2>🌐 Deep-Dive: Network &amp; Infrastructure Scoping</h2>
+
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>WAN, SD-WAN &amp; SASE</label>
+            <span>This maps directly to WAN redesign, branch connectivity, SD-WAN, and secure remote access opportunities.</span>
+            <span class="say-it">💬 Try saying: "How are branch sites and remote users connected, and do you see a need for SD-WAN or SASE?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="input-group-label">Connectivity Model</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">MPLS / leased lines</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">SD-WAN</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">SASE / secure remote access</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Direct cloud interconnect</span></label>
+<label class="input-group-label" style="margin-top: 10px;">Edge Needs</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Need higher bandwidth / resilience</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Need branch optimisation</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Note ISP providers, link counts, and branch pain points..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Switching, VLANs &amp; Cabling</label>
+            <span>This surfaces switching refreshes, segmentation, PoE, and structured cabling requirements.</span>
+            <span class="say-it">💬 Try saying: "What does the switching and cabling layer look like across the sites?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="input-group-label">Access Layer</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Layer 3 core routing</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">VLAN segmentation in place</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">PoE / PoE+ needed</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Structured cabling in good shape</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Legacy hardware or cabling risk</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Record switch vendors, port density, and any EOL equipment..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Wi-Fi, Guest Access &amp; Wireless Security</label>
+            <span>This uncovers Wi-Fi refreshes, guest portals, rogue AP detection, and controller-managed environments.</span>
+            <span class="say-it">💬 Try saying: "How are Wi-Fi, guest access, and wireless security managed today?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="input-group-label">Wireless Environment</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Wi-Fi 6 / 6E / 7 in use or planned</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Central controller / cloud-managed APs</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Guest portal / captive portal needed</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Rogue AP detection or monitoring</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Capture AP count, density concerns, and mobility issues..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Network Visibility &amp; Monitoring</label>
+            <span>This creates the opening for monitoring, alerting, IPAM, SNMP, NetFlow, and managed network support.</span>
+            <span class="say-it">💬 Try saying: "How much visibility do you have into outages, link failures, and network performance?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="input-group-label">Observability</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Central monitoring in place</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Automated outage alerting</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Network diagrams / IPAM maintained</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Troubleshooting is mostly reactive</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="List tools such as SolarWinds, PRTG, LibreNMS, or custom monitoring..."></textarea></div>
+    </div>
+    <div class="discovery-card">
+        <div class="meta-zone">
+            <label>Physical Infrastructure, Power &amp; CCTV</label>
+            <span>This keeps the facilities side of the project visible, including racks, UPS, cooling, and surveillance.</span>
+            <span class="say-it">💬 Try saying: "Are there any power, cooling, rack, or CCTV requirements that should be added to the scope?"</span>
+        </div>
+        <div class="interactive-zone">
+            
+<label class="input-group-label">Facility Readiness</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">UPS / generator resilience</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Dedicated server room or rack space</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Cooling / ventilation in place</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">CCTV required or already deployed</span></label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Physical access control / security review needed</span></label>
+<label class="input-group-label" style="margin-top: 10px;">Risk Indicators</label>
+<label class="option-item"><input type="checkbox"><span class="option-text">Aging power or cooling infrastructure</span></label>
+
+        </div>
+        <div class="notes-zone"><textarea class="textarea-notes" placeholder="Note camera counts, rack layout, and any environmental risks..."></textarea></div>
+    </div>
         </section>
     </div>
 
@@ -1189,7 +1291,7 @@
     function toggleDeepDive(sectionId, buttonElement, icon) {
         const targetSection = document.getElementById(sectionId);
         const actionText = buttonElement.innerHTML.trim();
-        
+
         if (targetSection.style.display === 'none' || targetSection.style.display === '') {
             targetSection.style.display = 'block';
             buttonElement.classList.add('active-toggle');
@@ -1205,4 +1307,5 @@
 </script>
 
 </body>
+
 </html>
